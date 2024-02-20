@@ -6,8 +6,8 @@ public class IsometricGraphics {
         JFrame frame = new JFrame();
         frame.setSize(900,1200);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        JPanel panel = new JPanel();
-        panel.drawTri1();
+        MyPanel panel = new MyPanel();
+        panel.drawTri1(panel.getGraphics());
         frame.add(panel);
         frame.setVisible(true);
 

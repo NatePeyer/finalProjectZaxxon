@@ -7,8 +7,8 @@ public class MyPanel extends JPanel {
     {
     }
 
-    public void drawTri1(Graphics g)
+    public void drawTri1(Graphics g2)
     {
-        IsometricTriangle tri1 = new IsometricTriangle(g);
+        IsometricTriangle tri1 = new IsometricTriangle(g2);
     }
 }
