@@ -6,7 +6,14 @@ public class IsometricTriangle {
 
     public IsometricTriangle(Graphics g2)
     {
-        g2.setColor(Color.BLACK);
-        g2.fillPolygon(xloc1,yloc1,3);
+        try {
+            g2.setColor(Color.BLACK);
+            g2.fillPolygon(xloc1,yloc1,3);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
     }
 }
