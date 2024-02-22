@@ -7,8 +7,25 @@ public class MyPanel extends JPanel {
     {
     }
 
-    public void drawTri1(Graphics g2)
+    @Override
+    public void paintComponent(Graphics g)
     {
-        IsometricTriangle tri1 = new IsometricTriangle(g2);
+        super.paintComponent(g);
+        IsometricTriangleTop tri1 = new IsometricTriangleTop(g);
+        IsometricTriangleBottom tri2 = new IsometricTriangleBottom(g);
+        g.setColor(Color.BLACK);
+        g.fillRect(0,734,600,66);
+        try
+        {
+            Thread.sleep(25);
+        }
+        catch (InterruptedException e)
+        {
+            System.out.println(e);
+        }
+        repaint();
     }
+
+
+
 }
