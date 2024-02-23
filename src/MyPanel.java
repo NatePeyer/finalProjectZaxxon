@@ -14,7 +14,8 @@ public class MyPanel extends JPanel {
         IsometricTriangleTop tri1 = new IsometricTriangleTop(g);
         IsometricTriangleBottom tri2 = new IsometricTriangleBottom(g);
         g.setColor(Color.BLACK);
-        g.fillRect(0,734,600,66);
+        g.fillRect(0,700,600,100);
+        Fuelbar bar = new Fuelbar(g);
         try
         {
             Thread.sleep(25);
