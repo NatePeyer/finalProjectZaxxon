@@ -12,25 +12,25 @@ public class Fuelbar
         g2.fillRect(100,740,2,20);
         //1
         g2.setColor(Color.red);
-        g2.fillRect(104,740,4,20);
+        g2.fillRect(102,740,2,20);
         //2
         g2.setColor(Color.yellow);
-        g2.fillRect(108,742,4,16);
+        g2.fillRect(104,742,2,16);
         //3
         g2.setColor(Color.red);
-        g2.fillRect(112,742,4,16);
+        g2.fillRect(106,742,2,16);
         //4
         g2.setColor(Color.yellow);
-        g2.fillRect(116,744,4,12);
+        g2.fillRect(108,744,2,12);
         //5
         g2.setColor(Color.red);
-        g2.fillRect(120,744,4,12);
+        g2.fillRect(110,744,2,12);
         //6
         g2.setColor(Color.yellow);
-        g2.fillRect(124,746,4,8);
+        g2.fillRect(112,746,2,8);
         //7
         g2.setColor(Color.red);
-        g2.fillRect(128,746,4,8);
+        g2.fillRect(114,746,2,8);
         //8
     }
 }
