@@ -26,7 +26,7 @@ public class MyPanel extends JPanel {
             x += 2;
             if(num%2 == 0)
             {
-                y+=2;
+                y++;
                 height-=2;
                 if(num%8==0)
                 {
