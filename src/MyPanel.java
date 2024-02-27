@@ -23,10 +23,10 @@ public class MyPanel extends JPanel {
         int x = this.x;
         int y = this.y;
         int height = 20;
-        g.setColor(Color.BLUE);
+        g.setColor(new Color(191,170,0,255));
         for(int i = 0; i < fuel.length; i++)
         {
-            g.fillRect(x,y,2,height);
+            g.fillRect(x,y,3,height);
             //fuel[i]  = new Fuelbar(g,x,y,2,height,num);
             System.out.println(x);
             System.out.println(y);
@@ -36,7 +36,8 @@ public class MyPanel extends JPanel {
             x += 3;
             if(i%2 == 0)
             {
-                g.setColor(Color.ORANGE);
+                g.setColor(new Color(223,47,0,255));
+                //rgba(223,57,0,255)
                 y++;
                 height-=2;
                 if(i%8==0)
@@ -47,7 +48,8 @@ public class MyPanel extends JPanel {
             }
             else
             {
-                g.setColor(Color.BLUE);
+                g.setColor(new Color(191,170,0,255));
+                //rgba(191,170,0,255)
             }
         }
 
