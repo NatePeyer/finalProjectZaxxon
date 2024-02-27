@@ -6,26 +6,26 @@ public class Fuelbar
     protected int timeThrough = 0;
     public Fuelbar(Graphics g2, int x, int y, int width, int height, int num)
     {
-        timeThrough++;
-        if(num%2 == 0)
-        {
-            g2.setColor(Color.ORANGE);
-        }
-        else
-        {
-            g2.setColor(Color.BLUE);
-        }
-        if (timeThrough == 2)
-        {
-            timeThrough = 0;
-            y += 2;
-            height -= 4;
-
-        }
-        if(num%8 == 0)
-        {
-            y = 740;
-        }
+        //timeThrough++;
+        //if(num%2 == 0)
+        //{
+        //    g2.setColor(Color.ORANGE);
+        //}
+        //else
+        //{
+        //    g2.setColor(Color.BLUE);
+        //}
+        //if (timeThrough == 2)
+        //{
+        //    timeThrough = 0;
+        //    y++;
+        //    height -= 2;
+//
+        //}
+        //if(num%8 == 0)
+        //{
+        //    y = 740;
+        //}
 
 
         // 16 triangles made up of lines

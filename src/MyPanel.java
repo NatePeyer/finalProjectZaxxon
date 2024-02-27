@@ -19,24 +19,37 @@ public class MyPanel extends JPanel {
         IsometricTriangleBottom tri2 = new IsometricTriangleBottom(g);
         g.setColor(Color.BLACK);
         g.fillRect(0,700,600,100);
+        //Still not drawing triangles right
+        int x = this.x;
+        int y = this.y;
+        int height = 20;
+        g.setColor(Color.BLUE);
         for(int i = 0; i < fuel.length; i++)
         {
-            int num = i++;
-            fuel[i]  = new Fuelbar(g,x,y,2,height,num);
-            x += 2;
-            if(num%2 == 0)
+            g.fillRect(x,y,2,height);
+            //fuel[i]  = new Fuelbar(g,x,y,2,height,num);
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println(height);
+            System.out.println(i);
+            System.out.println();
+            x += 3;
+            if(i%2 == 0)
             {
+                g.setColor(Color.ORANGE);
                 y++;
                 height-=2;
-                if(num%8==0)
+                if(i%8==0)
                 {
                     height = 20;
+                    y = this.y;
                 }
             }
+            else
+            {
+                g.setColor(Color.BLUE);
+            }
         }
-        x = 100;
-        y = 740;
-        height = 20;
 
         //Fuelbar bar = new Fuelbar(g, 100,740,2,20,1);
         try
