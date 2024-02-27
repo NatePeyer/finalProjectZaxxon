@@ -13,7 +13,7 @@ public class Fuelbar
         }
         else
         {
-            g2.setColor(Color.YELLOW);
+            g2.setColor(Color.BLUE);
         }
         if (timeThrough == 2)
         {

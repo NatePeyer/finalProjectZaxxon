@@ -34,6 +34,9 @@ public class MyPanel extends JPanel {
                 }
             }
         }
+        x = 100;
+        y = 740;
+        height = 20;
 
         //Fuelbar bar = new Fuelbar(g, 100,740,2,20,1);
         try
