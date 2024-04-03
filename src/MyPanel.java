@@ -1,14 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class MyPanel extends JPanel {
     protected Fuelbar[] fuel = new Fuelbar[128];
     protected  int x = 100;
     protected int y = 740;
     protected int height = 20;
+    protected int key;
 
     public MyPanel()
     {
+        setFocusable(true);
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                key = e.getKeyCode();
+            }
+        });
     }
 
     @Override
@@ -17,7 +27,7 @@ public class MyPanel extends JPanel {
         super.paintComponent(g);
         IsometricTriangleTop tri1 = new IsometricTriangleTop(g);
         IsometricTriangleBottom tri2 = new IsometricTriangleBottom(g);
-        Spaceship ship = new Spaceship(g);
+        Spaceship ship = new Spaceship(g,1);
         g.setColor(Color.BLACK);
         g.fillRect(0,700,600,100);
         //Still not drawing triangles right
