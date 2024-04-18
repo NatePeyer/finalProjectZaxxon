@@ -31,6 +31,7 @@ public class MyPanel extends JPanel {
         IsometricTriangleTop tri1 = new IsometricTriangleTop(g);
         IsometricTriangleBottom tri2 = new IsometricTriangleBottom(g);
         ship.drawSpaceship(g,key);
+        key = -1;
         g.setColor(Color.BLACK);
         g.fillRect(0,700,600,100);
         //Still not drawing triangles right

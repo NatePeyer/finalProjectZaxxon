@@ -34,6 +34,7 @@ public class Spaceship {
         if(key == 38)
         {
             System.out.println("up arrow pressed");
+            y+=10;
             Image spaceship = null;
             try {
                 File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
@@ -41,11 +42,12 @@ public class Spaceship {
             } catch (IOException ex) {
                 System.out.println(ex);
             }
-            g.drawImage(spaceship, x, y+10, null);
+            g.drawImage(spaceship, x, y, null);
             //implmentation to devlope for moving up
         } else if (key == 40)
         {
             System.out.println("down arrow pressed");
+            y-=10;
             Image spaceship = null;
             try {
                 File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
@@ -53,11 +55,12 @@ public class Spaceship {
             } catch (IOException ex) {
                 System.out.println(ex);
             }
-            g.drawImage(spaceship, x, y-10, null);
+            g.drawImage(spaceship, x, y, null);
             //implmentation to devlope for moving down
         } else if (key == 37)
         {
             System.out.println("left arrow pressed");
+            x+=10;
             Image spaceship = null;
             try {
                 File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
@@ -65,11 +68,12 @@ public class Spaceship {
             } catch (IOException ex) {
                 System.out.println(ex);
             }
-            g.drawImage(spaceship, x+10, y, null);
+            g.drawImage(spaceship, x, y, null);
             //implmentation to devlop for moving to the left
         } else if (key == 39)
         {
             System.out.println("right arrow pressed");
+            x-=10;
             Image spaceship = null;
             try {
                 File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
@@ -77,7 +81,7 @@ public class Spaceship {
             } catch (IOException ex) {
                 System.out.println(ex);
             }
-            g.drawImage(spaceship, x-10, y, null);
+            g.drawImage(spaceship, x, y, null);
             // implmentation to devlop for moving to the right
         }
         else
