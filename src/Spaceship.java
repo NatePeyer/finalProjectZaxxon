@@ -34,7 +34,7 @@ public class Spaceship {
         if(key == 38)
         {
             System.out.println("up arrow pressed");
-            y+=10;
+            y-=5;
             Image spaceship = null;
             try {
                 File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
@@ -47,7 +47,7 @@ public class Spaceship {
         } else if (key == 40)
         {
             System.out.println("down arrow pressed");
-            y-=10;
+            y+=5;
             Image spaceship = null;
             try {
                 File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
@@ -60,7 +60,7 @@ public class Spaceship {
         } else if (key == 37)
         {
             System.out.println("left arrow pressed");
-            x+=10;
+            x-=5;
             Image spaceship = null;
             try {
                 File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
@@ -73,7 +73,7 @@ public class Spaceship {
         } else if (key == 39)
         {
             System.out.println("right arrow pressed");
-            x-=10;
+            x+=5;
             Image spaceship = null;
             try {
                 File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");

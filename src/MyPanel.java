@@ -9,6 +9,9 @@ public class MyPanel extends JPanel {
     protected int y = 740;
     protected int height = 20;
     protected int key;
+    Spaceship ship = new Spaceship();
+    IsometricTriangleTop tri1 = new IsometricTriangleTop();
+    IsometricTriangleBottom tri2 = new IsometricTriangleBottom();
 
     public MyPanel()
     {
@@ -26,10 +29,9 @@ public class MyPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g)
     {
-        Spaceship ship = new Spaceship();
         super.paintComponent(g);
-        IsometricTriangleTop tri1 = new IsometricTriangleTop(g);
-        IsometricTriangleBottom tri2 = new IsometricTriangleBottom(g);
+        tri1.drawTriTop(g);
+        tri2.drawTriBottom(g);
         ship.drawSpaceship(g,key);
         key = -1;
         g.setColor(Color.BLACK);
@@ -71,7 +73,7 @@ public class MyPanel extends JPanel {
         //Fuelbar bar = new Fuelbar(g, 100,740,2,20,1);
         try
         {
-            Thread.sleep(100);
+            Thread.sleep(50);
         }
         catch (InterruptedException e)
         {
