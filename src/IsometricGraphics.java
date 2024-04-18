@@ -10,7 +10,6 @@ public class IsometricGraphics {
         MyPanel panel = new MyPanel();
         frame.add(panel);
         frame.setVisible(true);
-        frame.repaint();
 
     }
 }

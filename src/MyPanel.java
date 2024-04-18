@@ -17,17 +17,20 @@ public class MyPanel extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
                 key = e.getKeyCode();
+                System.out.println("key pressed");
             }
         });
+        System.out.println("panel created");
     }
 
     @Override
     public void paintComponent(Graphics g)
     {
+        Spaceship ship = new Spaceship();
         super.paintComponent(g);
         IsometricTriangleTop tri1 = new IsometricTriangleTop(g);
         IsometricTriangleBottom tri2 = new IsometricTriangleBottom(g);
-        Spaceship ship = new Spaceship(g,1);
+        ship.drawSpaceship(g,key);
         g.setColor(Color.BLACK);
         g.fillRect(0,700,600,100);
         //Still not drawing triangles right
@@ -39,11 +42,11 @@ public class MyPanel extends JPanel {
         {
             g.fillRect(x,y,3,height);
             //fuel[i]  = new Fuelbar(g,x,y,2,height,num);
-            System.out.println(x);
-            System.out.println(y);
-            System.out.println(height);
-            System.out.println(i);
-            System.out.println();
+            //System.out.println(x);
+            //System.out.println(y);
+           // System.out.println(height);
+           // System.out.println(i);
+            //System.out.println();
             x += 3;
             if(i%2 == 0)
             {
@@ -67,7 +70,7 @@ public class MyPanel extends JPanel {
         //Fuelbar bar = new Fuelbar(g, 100,740,2,20,1);
         try
         {
-            Thread.sleep(500);
+            Thread.sleep(100);
         }
         catch (InterruptedException e)
         {

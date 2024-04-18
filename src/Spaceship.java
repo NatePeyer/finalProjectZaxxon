@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Spaceship {
+    protected int x = 50;
+    protected int y = 400;
 
     public Spaceship(Graphics g) {
         //need to find a good picture of the spaceship, and then figure out how to set its start postion
@@ -17,7 +19,12 @@ public class Spaceship {
 
     }
 
-    public Spaceship(Graphics g, int key)
+    public Spaceship()
+    {
+        System.out.println("Spaceship Created");
+    }
+
+    public void drawSpaceship(Graphics g, int key)
     {
         //37 left arrow
         //38 up arrow
@@ -26,15 +33,51 @@ public class Spaceship {
         //47 slash key
         if(key == 38)
         {
+            System.out.println("up arrow pressed");
+            Image spaceship = null;
+            try {
+                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                spaceship = ImageIO.read(pathToFile);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+            g.drawImage(spaceship, x, y+10, null);
             //implmentation to devlope for moving up
         } else if (key == 40)
         {
+            System.out.println("down arrow pressed");
+            Image spaceship = null;
+            try {
+                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                spaceship = ImageIO.read(pathToFile);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+            g.drawImage(spaceship, x, y-10, null);
             //implmentation to devlope for moving down
         } else if (key == 37)
         {
+            System.out.println("left arrow pressed");
+            Image spaceship = null;
+            try {
+                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                spaceship = ImageIO.read(pathToFile);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+            g.drawImage(spaceship, x+10, y, null);
             //implmentation to devlop for moving to the left
         } else if (key == 39)
         {
+            System.out.println("right arrow pressed");
+            Image spaceship = null;
+            try {
+                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                spaceship = ImageIO.read(pathToFile);
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+            g.drawImage(spaceship, x-10, y, null);
             // implmentation to devlop for moving to the right
         }
         else
@@ -46,7 +89,7 @@ public class Spaceship {
             } catch (IOException ex) {
                 System.out.println(ex);
             }
-            g.drawImage(spaceship, 50, 400, null);
+            g.drawImage(spaceship, x, y, null);
         }
     }
 }
