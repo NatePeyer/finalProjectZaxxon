@@ -37,7 +37,7 @@ public class Spaceship {
             y-=5;
             Image spaceship = null;
             try {
-                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                File pathToFile = new File("Pictures/spaceshipUp.Png");
                 spaceship = ImageIO.read(pathToFile);
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -50,7 +50,7 @@ public class Spaceship {
             y+=5;
             Image spaceship = null;
             try {
-                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                File pathToFile = new File("Pictures/spaceShipDownTwo.Png");
                 spaceship = ImageIO.read(pathToFile);
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -95,5 +95,15 @@ public class Spaceship {
             }
             g.drawImage(spaceship, x, y, null);
         }
+    }
+
+    public int getX()
+    {
+        return x;
+    }
+
+    public int getY()
+    {
+        return y;
     }
 }

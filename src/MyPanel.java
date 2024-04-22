@@ -4,11 +4,12 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class MyPanel extends JPanel {
-    protected Fuelbar[] fuel = new Fuelbar[128];
+    protected Fuelbar[] fuel;
     protected  int x = 100;
     protected int y = 740;
     protected int height = 20;
     protected int key;
+    protected int count = 0;
     Spaceship ship = new Spaceship();
     IsometricTriangleTop tri1 = new IsometricTriangleTop();
     IsometricTriangleBottom tri2 = new IsometricTriangleBottom();
@@ -41,6 +42,14 @@ public class MyPanel extends JPanel {
         int y = this.y;
         int height = 20;
         g.setColor(new Color(191,170,0,255));
+        int temp = Fuelbar.getTimeThrough();
+        fuel = new Fuelbar[128 - temp];
+        if(count == 80)
+        {
+            count = 0;
+            Fuelbar.usingFuel();
+            System.out.println("used some fuel");
+        }
         for(int i = 0; i < fuel.length; i++)
         {
             g.fillRect(x,y,3,height);
@@ -71,9 +80,10 @@ public class MyPanel extends JPanel {
         }
 
         //Fuelbar bar = new Fuelbar(g, 100,740,2,20,1);
+        count++;
         try
         {
-            Thread.sleep(50);
+            Thread.sleep(25);
         }
         catch (InterruptedException e)
         {
