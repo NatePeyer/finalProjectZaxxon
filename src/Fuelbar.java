@@ -13,6 +13,10 @@ public class Fuelbar
     {
         timeThrough++;
         fuelRemaining--;
+        if(fuelRemaining == 0)
+        {
+            //need to implment way to end game when fuel runs out.
+        }
     }
 
     public static void addFuel()
