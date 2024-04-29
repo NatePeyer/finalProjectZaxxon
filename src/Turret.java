@@ -10,6 +10,7 @@ public class Turret
 
     public void turretHit()
     {
+        System.out.println("Turret hit and destroyed");
         //needs implmentation
     }
 

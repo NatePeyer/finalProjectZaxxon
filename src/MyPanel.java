@@ -11,6 +11,7 @@ public class MyPanel extends JPanel {
     protected int key;
     protected int count = 0;
     Spaceship ship = new Spaceship();
+    laserbeam laser = new laserbeam();
     IsometricTriangleTop tri1 = new IsometricTriangleTop();
     IsometricTriangleBottom tri2 = new IsometricTriangleBottom();
 
@@ -34,6 +35,11 @@ public class MyPanel extends JPanel {
         tri1.drawTriTop(g);
         tri2.drawTriBottom(g);
         ship.drawSpaceship(g,key);
+        if(key == 47)
+        {
+            System.out.println("blasting lasers");
+            laser.movelaserBeam(g, ship.getX(), ship.getY());
+        }
         key = -1;
         g.setColor(Color.BLACK);
         g.fillRect(0,700,600,100);
@@ -91,7 +97,4 @@ public class MyPanel extends JPanel {
         }
         repaint();
     }
-
-
-
 }
