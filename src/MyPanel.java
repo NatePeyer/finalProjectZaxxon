@@ -40,6 +40,7 @@ public class MyPanel extends JPanel {
             System.out.println("blasting lasers");
             laser.movelaserBeam(g, ship.getX(), ship.getY());
         }
+        Turret shotem = new Turret(g);
         key = -1;
         g.setColor(Color.BLACK);
         g.fillRect(0,700,600,100);
