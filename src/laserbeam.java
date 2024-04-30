@@ -5,6 +5,8 @@ import java.io.IOException;
 
 public class laserbeam
 {
+    private int x2 = 105;
+    private int y2 =45;
     public laserbeam()
     {
         System.out.println("laser made");
@@ -12,8 +14,8 @@ public class laserbeam
 
     public void movelaserBeam(Graphics g, int xIn, int yIn)
     {
-        int x = xIn + 105;
-        int y = yIn + 45;
+        int x = xIn + x2;
+        int y = yIn + y2;
         Image laserBeam = null;
         try
         {
@@ -24,6 +26,7 @@ public class laserbeam
             System.out.println(ex);
         }
         g.drawImage(laserBeam,x,y,null);
-
+        x2+=5;
+        y2-=5;
     }
 }
