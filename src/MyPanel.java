@@ -56,12 +56,6 @@ public class MyPanel extends JPanel {
         for(int i = 0; i < fuel.length; i++)
         {
             g.fillRect(x,y,3,height);
-            //fuel[i]  = new Fuelbar(g,x,y,2,height,num);
-            //System.out.println(x);
-            //System.out.println(y);
-           // System.out.println(height);
-           // System.out.println(i);
-            //System.out.println();
             x += 3;
             if(i%2 == 0)
             {
