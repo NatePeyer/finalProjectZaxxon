@@ -1,11 +1,7 @@
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.tree.FixedHeightLayoutCache;
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.Properties;
 
 public class Spaceship {
     protected int x = 50;
