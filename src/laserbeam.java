@@ -9,6 +9,7 @@ public class laserbeam
     private int y2 = 45;
     private int x;
     private int y;
+    private boolean pressed;
     public laserbeam()
     {
         System.out.println("laser made");
@@ -16,14 +17,12 @@ public class laserbeam
 
     public void movelaserBeam(Graphics g, int xIn, int yIn, int key)
     {
-        int pressed = 0;
-        int count = 0;
         if(key == 47)
         {
             System.out.println("blasting lasers");
-            pressed++;
-            int x = xIn + x2;
-            int y = yIn + y2;
+            pressed = true;
+            x = xIn + x2;
+            y = yIn + y2;
             Image laserBeam = null;
             try {
                 File pathToFile = new File("Pictures/zaxxonLaserbeam-removebg-preview.png");
@@ -41,12 +40,12 @@ public class laserbeam
                 x2 = 105;
                 y = yIn;
                 y2 = 45;
-
+                pressed = false;
             }
         }
         else
         {
-            if(pressed > 0) {
+            if(pressed) {
                 if (this.hasNotCollided(800, 1000)) {
                     x = xIn + x2;
                     y = yIn + y2;
@@ -67,7 +66,7 @@ public class laserbeam
                         x2 = 105;
                         y = yIn;
                         y2 = 45;
-                        pressed = 0;
+                        pressed = false;
                     }
                 }
             }
