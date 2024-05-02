@@ -42,7 +42,7 @@ public class laserbeam
             y2 -= 2;
 
             if (x > 600 || y < 0) {
-                System.out.println("reseting laser");
+                System.out.println("rearming laser");
                 x = xIn;
                 x2 = 105;
                 y = yIn;
@@ -69,7 +69,7 @@ public class laserbeam
                     y2 -= 2;
 
                     if (x > 600 || y < 0) {
-                        System.out.println("reseting laser");
+                        System.out.println("rearming laser");
                         x = xIn;
                         x2 = 105;
                         y = yIn;
@@ -85,7 +85,7 @@ public class laserbeam
     {
         if(x == xIn || y == yIn)
         {
-            System.out.println("hit target destoryed");
+            System.out.println("hit, target destoryed");
             return false;
         }
         else
