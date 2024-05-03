@@ -79,7 +79,7 @@ public class MyPanel extends JPanel {
         }
 
         //Fuelbar bar = new Fuelbar(g, 100,740,2,20,1);
-        count++;
+        count += 2;
         try
         {
             Thread.sleep(25);

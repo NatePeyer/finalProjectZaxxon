@@ -38,6 +38,8 @@ public class laserbeam
                 System.out.println(ex);
             }
             g.drawImage(laserBeam, x, y, null);
+            g.setColor(Color.RED);
+            g.drawRect(x + 3,y,25,25);
             x2 += 5;
             y2 -= 2;
 
@@ -65,6 +67,8 @@ public class laserbeam
                         System.out.println(ex);
                     }
                     g.drawImage(laserBeam, x, y, null);
+                    g.setColor(Color.RED);
+                    g.drawRect(x + 3,y,25,25);
                     x2 += 5;
                     y2 -= 2;
 
