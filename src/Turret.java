@@ -20,7 +20,7 @@ public class Turret
         catch(IOException ex) {
             System.out.println(ex);
         }
-        g.drawImage(turret,0,0,null);
+        g.drawImage(turret,100,100,null);
 
     }
 
