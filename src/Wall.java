@@ -10,14 +10,6 @@ public class Wall
 
     public void paintWall(Graphics g)
     {
-        Image wall = null;
-        try {
-            File pathToFile = new File("Pictures/zaxxonWall.png");
-            wall = ImageIO.read(pathToFile);
-        } catch (IOException ex) {
-            System.out.println(ex);
-        }
-        g.drawImage(wall, 100, 100, null);
 
         Image wall2 = null;
         try {
@@ -26,6 +18,15 @@ public class Wall
         } catch (IOException ex) {
             System.out.println(ex);
         }
-        g.drawImage(wall2, 200, 200, null);
+        g.drawImage(wall2, 200, 200,100,100, null);
+
+        Image wall = null;
+        try {
+            File pathToFile = new File("Pictures/zaxxonOtherWall.png");
+            wall = ImageIO.read(pathToFile);
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        g.drawImage(wall, 260, 225, 100, 100, null);
     }
 }

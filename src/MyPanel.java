@@ -37,13 +37,13 @@ public class MyPanel extends JPanel {
         tri1.drawTriTop(g);
         tri2.drawTriBottom(g);
         ship.drawSpaceship(g,key);
-        //wall.paintWall(g);
+        wall.paintWall(g);
         laser.movelaserBeam(g, ship.getX(), ship.getY(), key);
         shotem.moveTurret(g);
+        shotem.turretHit(laser);
         key = -1;
         g.setColor(Color.BLACK);
         g.fillRect(0,700,600,100);
-        //Still not drawing triangles right
         int x = this.x;
         int y = this.y;
         int height = 20;
