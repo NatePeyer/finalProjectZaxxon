@@ -8,7 +8,12 @@ public class Turret
     protected int x;
     protected int y;
 
-    public Turret(Graphics g)
+    public Turret()
+    {
+
+    }
+
+    public void moveTurret(Graphics g)
     {
         System.out.println("Turret Created");
         Image turret = null;
@@ -20,10 +25,9 @@ public class Turret
         catch(IOException ex) {
             System.out.println(ex);
         }
-        g.drawImage(turret,100,100,null);
+        g.drawImage(turret,400,300,100,100,null);
 
     }
-
     public void turretHit()
     {
         System.out.println("Turret hit and destroyed");
