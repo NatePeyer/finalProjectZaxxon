@@ -35,7 +35,7 @@ public class laserbeam
             pressed = true;
             laserBeam = null;
             try {
-                File pathToFile = new File("Pictures/zaxxonLaserbeam-removebg-preview.png");
+                File pathToFile = new File("../Pictures/zaxxonLaserbeam-removebg-preview.png");
                 laserBeam = ImageIO.read(pathToFile);
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -64,7 +64,7 @@ public class laserbeam
                     System.out.println("still blasting lasers");
                     Image laserBeam = null;
                     try {
-                        File pathToFile = new File("Pictures/zaxxonLaserbeam-removebg-preview.png");
+                        File pathToFile = new File("../Pictures/zaxxonLaserbeam-removebg-preview.png");
                         laserBeam = ImageIO.read(pathToFile);
                     } catch (IOException ex) {
                         System.out.println(ex);

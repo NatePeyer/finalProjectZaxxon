@@ -30,9 +30,10 @@ public class Turret
             System.out.println("Turret hit and destroyed" + "\nRespawning in 5 seconds");
 
             Image kabomb = null;
+            Image kabomb2 = null;
             try
             {
-                File pathToFile = new File("Pictures/zaxxonKabom.png");
+                File pathToFile = new File("../Pictures/zaxxonKabom.png");
                 kabomb = ImageIO.read(pathToFile);
             }
             catch(IOException ex) {
@@ -42,13 +43,13 @@ public class Turret
 
             try
             {
-                File pathToFile = new File("Pictures/zaxxonKabom2.png");
-                kabomb = ImageIO.read(pathToFile);
+                File pathToFile = new File("../Pictures/zaxxonKabom2.png");
+                kabomb2 = ImageIO.read(pathToFile);
             }
             catch(IOException ex) {
                 System.out.println(ex);
             }
-            g.drawImage(kabomb,x,y,100,100,null);
+            g.drawImage(kabomb2,x,y,100,100,null);
             turret = null;
             count++;
         }
@@ -56,7 +57,7 @@ public class Turret
         {
             try
             {
-                File pathToFile = new File("Pictures/zaxxonSprites_1_-removebg-preview.png");
+                File pathToFile = new File("../Pictures/zaxxonSprites_1_-removebg-preview.png");
                 turret = ImageIO.read(pathToFile);
             }
             catch(IOException ex) {
@@ -75,11 +76,11 @@ public class Turret
         {
             count = 0;
             score ++;
-            System.out.println("Your is now " + score + " after that hit.");
+            System.out.println("Your score is now " + score + " after that hit.");
             System.out.println("Turret respawing");
             try
             {
-                File pathToFile = new File("Pictures/zaxxonSprites_1_-removebg-preview.png");
+                File pathToFile = new File("../Pictures/zaxxonSprites_1_-removebg-preview.png");
                 turret = ImageIO.read(pathToFile);
             }
             catch(IOException ex) {

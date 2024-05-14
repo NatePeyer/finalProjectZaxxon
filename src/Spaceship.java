@@ -33,7 +33,7 @@ public class Spaceship {
             y-=5;
             Image spaceship = null;
             try {
-                File pathToFile = new File("Pictures/spaceshipUp.Png");
+                File pathToFile = new File("../Pictures/spaceshipUp.Png");
                 spaceship = ImageIO.read(pathToFile);
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -48,7 +48,7 @@ public class Spaceship {
             y+=5;
             Image spaceship = null;
             try {
-                File pathToFile = new File("Pictures/spaceShipDownTwo.Png");
+                File pathToFile = new File("../Pictures/spaceShipDownTwo.Png");
                 spaceship = ImageIO.read(pathToFile);
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -63,7 +63,7 @@ public class Spaceship {
             x-=5;
             Image spaceship = null;
             try {
-                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                File pathToFile = new File("../Pictures/fpZaxxonFlyingShipOne.Png");
                 spaceship = ImageIO.read(pathToFile);
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -78,7 +78,7 @@ public class Spaceship {
             x+=5;
             Image spaceship = null;
             try {
-                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                File pathToFile = new File("../Pictures/fpZaxxonFlyingShipOne.Png");
                 spaceship = ImageIO.read(pathToFile);
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -92,7 +92,7 @@ public class Spaceship {
         {
             Image spaceship = null;
             try {
-                File pathToFile = new File("Pictures/fpZaxxonFlyingShipOne.Png");
+                File pathToFile = new File("../Pictures/fpZaxxonFlyingShipOne.Png");
                 spaceship = ImageIO.read(pathToFile);
             } catch (IOException ex) {
                 System.out.println(ex);
