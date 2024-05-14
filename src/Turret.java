@@ -71,7 +71,7 @@ public class Turret
                 hadBeenHit = false;
             }
         }
-        if(count == 100)
+        if(count == 50)
         {
             count = 0;
             score ++;

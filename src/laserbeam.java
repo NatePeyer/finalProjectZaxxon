@@ -12,6 +12,7 @@ public class laserbeam
     private int tempX;
     private int tempY;
     private boolean pressed;
+    private boolean wasHit = false;
     private Image laserBeam;
     public laserbeam()
     {
@@ -29,6 +30,7 @@ public class laserbeam
         }
         if(key == 47)
         {
+            wasHit = false;
             System.out.println("blasting lasers");
             pressed = true;
             laserBeam = null;
@@ -56,7 +58,7 @@ public class laserbeam
         else
         {
             if(pressed) {
-                if (this.hasNotCollided(800, 1000)) {
+                if (this.hasNotCollided(800, 1000) && !wasHit) {
                     x = tempX + x2;
                     y = tempY + y2;
                     System.out.println("still blasting lasers");
@@ -110,8 +112,9 @@ public class laserbeam
     }
     public void laserHit(Spaceship ship)
     {
-        x = ship.getX() + x2;
-        y = ship.getY() + y2;
+        x = ship.getX();
+        y = ship.getY();
         laserBeam = null;
+        wasHit = true;
     }
 }
