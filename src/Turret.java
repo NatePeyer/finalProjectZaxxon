@@ -12,19 +12,23 @@ public class Turret
     private Image turret = null;
     private boolean hadBeenHit = false;
 
-    public Turret()
+    public Turret(int xIn, int yIn)
     {
+        x = xIn;
+        y = yIn;
         System.out.println("Turret Created");
     }
 
-    public void turretHit(laserbeam beam, Graphics g)
+    public void turretHit(laserbeam beam, Graphics g, Spaceship ship)
     {
-        boolean xInHit = ((beam.getX() >= 410) && (beam.getX() <= 490));
-        boolean yInHit = ((beam.getY() >= 310) && (beam.getY() <= 390));
+        boolean xInHit = ((beam.getX() >= x +10) && (beam.getX() <= x + 90));
+        boolean yInHit = ((beam.getY() >= y + 10) && (beam.getY() <= y +90));
         if(xInHit && yInHit || hadBeenHit)
         {
             hadBeenHit = true;
+            beam.laserHit(ship);
             System.out.println("Turret hit and destroyed" + "\nRespawning in 5 seconds");
+
             Image kabomb = null;
             try
             {
@@ -34,7 +38,7 @@ public class Turret
             catch(IOException ex) {
                 System.out.println(ex);
             }
-            g.drawImage(kabomb,400,300,100,100,null);
+            g.drawImage(kabomb,x,y,100,100,null);
 
             try
             {
@@ -44,7 +48,7 @@ public class Turret
             catch(IOException ex) {
                 System.out.println(ex);
             }
-            g.drawImage(kabomb,400,300,100,100,null);
+            g.drawImage(kabomb,x,y,100,100,null);
             turret = null;
             count++;
         }
@@ -61,9 +65,9 @@ public class Turret
 
             if(!(xInHit && yInHit))
             {
-                g.drawImage(turret, 400, 300, 100, 100, null);
+                g.drawImage(turret, x, y, 100, 100, null);
                 g.setColor(Color.RED);
-                g.drawRect(400 + 10, 300 + 10, 80, 80);
+                g.drawRect(x + 10, y + 10, 80, 80);
                 hadBeenHit = false;
             }
         }
@@ -71,6 +75,7 @@ public class Turret
         {
             count = 0;
             score ++;
+            System.out.println("Your is now " + score + " after that hit.");
             System.out.println("Turret respawing");
             try
             {
@@ -83,9 +88,9 @@ public class Turret
 
             if(!(xInHit && yInHit))
             {
-                g.drawImage(turret, 400, 300, 100, 100, null);
+                g.drawImage(turret, x, y, 100, 100, null);
                 g.setColor(Color.RED);
-                g.drawRect(400 + 10, 300 + 10, 80, 80);
+                g.drawRect(x + 10, y + 10, 80, 80);
                 hadBeenHit = false;
             }
         }

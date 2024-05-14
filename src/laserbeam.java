@@ -12,6 +12,7 @@ public class laserbeam
     private int tempX;
     private int tempY;
     private boolean pressed;
+    private Image laserBeam;
     public laserbeam()
     {
         System.out.println("laser made");
@@ -30,7 +31,7 @@ public class laserbeam
         {
             System.out.println("blasting lasers");
             pressed = true;
-            Image laserBeam = null;
+            laserBeam = null;
             try {
                 File pathToFile = new File("Pictures/zaxxonLaserbeam-removebg-preview.png");
                 laserBeam = ImageIO.read(pathToFile);
@@ -106,5 +107,11 @@ public class laserbeam
     public int getY()
     {
         return y;
+    }
+    public void laserHit(Spaceship ship)
+    {
+        x = ship.getX() + x2;
+        y = ship.getY() + y2;
+        laserBeam = null;
     }
 }
