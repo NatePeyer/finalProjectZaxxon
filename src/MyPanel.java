@@ -39,7 +39,7 @@ public class MyPanel extends JPanel {
         ship.drawSpaceship(g,key);
         wall.paintWall(g);
         laser.movelaserBeam(g, ship.getX(), ship.getY(), key);
-        shotem.moveTurret(g, laser);
+        //shotem.moveTurret(g, laser);
         shotem.turretHit(laser,g);
         key = -1;
         g.setColor(Color.BLACK);
