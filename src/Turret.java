@@ -11,7 +11,6 @@ public class Turret
     private int score = 0;
     private Image turret = null;
     private boolean hadBeenHit = false;
-
     public Turret(int xIn, int yIn)
     {
         x = xIn;
@@ -23,14 +22,13 @@ public class Turret
     {
         boolean xInHit = ((beam.getX() >= x +10) && (beam.getX() <= x + 90));
         boolean yInHit = ((beam.getY() >= y + 10) && (beam.getY() <= y +90));
-        if((xInHit && yInHit) || hadBeenHit)
+        if((xInHit && yInHit) || hadBeenHit) // something wrong at this if now
         {
             System.out.println("eneter the if statment at line 28");
             hadBeenHit = true;
             System.out.println("has been hit = true");
             beam.laserHit(ship);
             System.out.println("Turret hit and destroyed" + "\nRespawning in 5 seconds");
-
             Image kabomb = null;
             Image kabomb2 = null;
             try
@@ -42,7 +40,6 @@ public class Turret
                 System.out.println(ex);
             }
             g.drawImage(kabomb,x,y,100,100,null);
-
             try
             {
                 File pathToFile = new File("../Pictures/zaxxonKabom2.png");
@@ -65,12 +62,11 @@ public class Turret
             catch(IOException ex) {
                 System.out.println(ex);
             }
-
             if(!(xInHit && yInHit))
             {
                 g.drawImage(turret, x, y, 100, 100, null);
-                g.setColor(Color.RED);
-                g.drawRect(x + 10, y + 10, 80, 80);
+                //g.setColor(Color.RED);
+               //g.drawRect(x + 10, y + 10, 80, 80);
                 hadBeenHit = false;
             }
         }
@@ -88,12 +84,11 @@ public class Turret
             catch(IOException ex) {
                 System.out.println(ex);
             }
-
             if(!(xInHit && yInHit))
             {
                 g.drawImage(turret, x, y, 100, 100, null);
-                g.setColor(Color.RED);
-                g.drawRect(x + 10, y + 10, 80, 80);
+                //g.setColor(Color.RED);
+                //g.drawRect(x + 10, y + 10, 80, 80);
                 hadBeenHit = false;
             }
         }

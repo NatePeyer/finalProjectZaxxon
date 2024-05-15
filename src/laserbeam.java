@@ -13,11 +13,12 @@ public class laserbeam
     private int tempY;
     private boolean pressed;
     private boolean wasHit = false;
+    private boolean start = false;
     private Image laserBeam;
     public laserbeam(int xIn, int yIn)
     {
-        x = xIn;
-        y = yIn;
+        x = -1;
+        y = -1;
         tempX = xIn;
         tempY = yIn;
         System.out.println("laser made");
@@ -26,13 +27,26 @@ public class laserbeam
         {
             File pathToFile = new File("../Pictures/zaxxonLaserbeam-removebg-preview.png");
             laserBeam = ImageIO.read(pathToFile);
-            pathToFile.delete();
         } 
         catch (IOException ex) 
         {
             System.out.println(ex);
         }
 
+    }
+
+    public void startLaser(int key, Spaceship ship)
+    {
+        System.out.println("start laser called");
+        System.out.println("shooting lasers");
+        x = ship.getX();
+        y = ship.getY();
+        tempX = ship.getX();
+        tempY = ship.getY();
+        x2 = 105;
+        y2 = 45;
+        pressed = true;
+        start = true;
     }
 
     public void movelaserBeam(Graphics g, int key, Spaceship ship)
@@ -42,14 +56,14 @@ public class laserbeam
             x += x2;
             y += y2;
         }
-        if(key == 47)
+        if(start)
         {
             wasHit = false;
             System.out.println("blasting lasers");
             pressed = true;
             g.drawImage(laserBeam, x, y, null);
-            g.setColor(Color.RED);
-            g.drawRect(x + 3,y,25,25);
+            //g.setColor(Color.RED);
+            //g.drawRect(x + 3,y,25,25);
             x2 += 5;
             y2 -= 2;
 
@@ -62,6 +76,7 @@ public class laserbeam
                 y2 = 45;
                 pressed = false;
             }
+            start = false;
         }
         else
         {
@@ -71,8 +86,8 @@ public class laserbeam
                     y = tempY + y2;
                     System.out.println("still blasting lasers");
                     g.drawImage(laserBeam, x, y, null);
-                    g.setColor(Color.RED);
-                    g.drawRect(x + 3,y,25,25);
+                    //g.setColor(Color.RED);
+                    //g.drawRect(x + 3,y,25,25);
                     x2 += 5;
                     y2 -= 2;
 
@@ -105,12 +120,13 @@ public class laserbeam
     public void laserHit(Spaceship ship)
     {
         System.out.println("laser hit method running");
-        x = ship.getX();
-        y = ship.getY();
-        tempX = ship.getX();
-        tempY = ship.getY();
-        x2 = 105;
-        y2 = 45;
+        //x = ship.getX();
+        //y = ship.getY();
+        //tempX = ship.getX();
+        //tempY = ship.getY();
+        //x2 = 105;
+        //y2 = 45;
+        System.out.println("pressed reset 1");
         pressed = false;
         wasHit = true;
     }

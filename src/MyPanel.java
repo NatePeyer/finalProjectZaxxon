@@ -21,11 +21,17 @@ public class MyPanel extends JPanel {
     public MyPanel()
     {
         setFocusable(true);
-        addKeyListener(new KeyAdapter() {
+        addKeyListener(new KeyAdapter() 
+        {
             @Override
-            public void keyPressed(KeyEvent e) {
+            public void keyPressed(KeyEvent e) 
+            {
                 key = e.getKeyCode();
                 System.out.println("key pressed");
+                if (key == 47)
+                {
+                    laser.startLaser(key, ship);
+                }
             }
         });
         System.out.println("panel created");
@@ -37,7 +43,7 @@ public class MyPanel extends JPanel {
         super.paintComponent(g);
         tri1.drawTriTop(g);
         tri2.drawTriBottom(g);
-        ship.drawSpaceship(g,key);
+        ship.drawSpaceship(g, key);
         //wall.paintWall(g);
         laser.movelaserBeam(g, key, ship);
         //shotem.moveTurret(g, laser);

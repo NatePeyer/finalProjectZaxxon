@@ -39,8 +39,8 @@ public class Spaceship {
                 System.out.println(ex);
             }
             g.drawImage(spaceship, x, y, null);
-            g.setColor(Color.RED);
-            g.drawRect(x,y+20,110,100);
+            //g.setColor(Color.RED);
+            //g.drawRect(x,y+20,110,100);
             //implmentation to devlope for moving up
         } else if (key == 40)
         {
@@ -54,8 +54,8 @@ public class Spaceship {
                 System.out.println(ex);
             }
             g.drawImage(spaceship, x, y, null);
-            g.setColor(Color.RED);
-            g.drawRect(x,y+20,110,100);
+            //g.setColor(Color.RED);
+            //g.drawRect(x,y+20,110,100);
             //implmentation to devlope for moving down
         } else if (key == 37)
         {
@@ -69,8 +69,8 @@ public class Spaceship {
                 System.out.println(ex);
             }
             g.drawImage(spaceship, x, y, null);
-            g.setColor(Color.RED);
-            g.drawRect(x,y+20,110,100);
+            //g.setColor(Color.RED);
+            //g.drawRect(x,y+20,110,100);
             //implmentation to devlop for moving to the left
         } else if (key == 39)
         {
@@ -84,8 +84,8 @@ public class Spaceship {
                 System.out.println(ex);
             }
             g.drawImage(spaceship, x, y, null);
-            g.setColor(Color.RED);
-            g.drawRect(x,y+20,110,100);
+            //g.setColor(Color.RED);
+            //g.drawRect(x,y+20,110,100);
             // implmentation to devlop for moving to the right
         }
         else
@@ -98,8 +98,8 @@ public class Spaceship {
                 System.out.println(ex);
             }
             g.drawImage(spaceship, x, y, null);
-            g.setColor(Color.RED);
-            g.drawRect(x,y+20,110,100);
+            //g.setColor(Color.RED);
+            //g.drawRect(x,y+20,110,100);
         }
         if(x < 0)
         {
