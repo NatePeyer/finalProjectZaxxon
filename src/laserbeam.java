@@ -25,7 +25,7 @@ public class laserbeam
         laserBeam = null;
         try 
         {
-            File pathToFile = new File("../Pictures/zaxxonLaserbeam-removebg-preview.png");
+            File pathToFile = new File("Pictures/zaxxonLaserbeam-removebg-preview.png");
             laserBeam = ImageIO.read(pathToFile);
         } 
         catch (IOException ex) 

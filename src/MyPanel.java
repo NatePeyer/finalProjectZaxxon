@@ -88,6 +88,7 @@ public class MyPanel extends JPanel {
         }
 
         //Fuelbar bar = new Fuelbar(g, 100,740,2,20,1);
+        System.out.println("Your score is: " + (shotem.getScore()+getem.getScore()));
         count += 2;
         try
         {

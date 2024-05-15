@@ -24,7 +24,7 @@ public class Turret
         boolean yInHit = ((beam.getY() >= y + 10) && (beam.getY() <= y +90));
         if((xInHit && yInHit) || hadBeenHit) // something wrong at this if now
         {
-            System.out.println("eneter the if statment at line 28");
+            System.out.println("enter the if statment at line 28");
             hadBeenHit = true;
             System.out.println("has been hit = true");
             beam.laserHit(ship);
@@ -33,7 +33,7 @@ public class Turret
             Image kabomb2 = null;
             try
             {
-                File pathToFile = new File("../Pictures/zaxxonKabom.png");
+                File pathToFile = new File("Pictures/zaxxonKabom.png");
                 kabomb = ImageIO.read(pathToFile);
             }
             catch(IOException ex) {
@@ -42,7 +42,7 @@ public class Turret
             g.drawImage(kabomb,x,y,100,100,null);
             try
             {
-                File pathToFile = new File("../Pictures/zaxxonKabom2.png");
+                File pathToFile = new File("Pictures/zaxxonKabom2.png");
                 kabomb2 = ImageIO.read(pathToFile);
             }
             catch(IOException ex) {
@@ -56,7 +56,7 @@ public class Turret
         {
             try
             {
-                File pathToFile = new File("../Pictures/zaxxonSprites_1_-removebg-preview.png");
+                File pathToFile = new File("Pictures/zaxxonSprites_1_-removebg-preview.png");
                 turret = ImageIO.read(pathToFile);
             }
             catch(IOException ex) {
@@ -78,7 +78,7 @@ public class Turret
             System.out.println("Turret respawing");
             try
             {
-                File pathToFile = new File("../Pictures/zaxxonSprites_1_-removebg-preview.png");
+                File pathToFile = new File("Pictures/zaxxonSprites_1_-removebg-preview.png");
                 turret = ImageIO.read(pathToFile);
             }
             catch(IOException ex) {
@@ -92,6 +92,11 @@ public class Turret
                 hadBeenHit = false;
             }
         }
+    }
+
+    public int getScore()
+    {
+        return score;
     }
 
 }

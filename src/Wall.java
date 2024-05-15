@@ -13,7 +13,7 @@ public class Wall
 
         Image wall2 = null;
         try {
-            File pathToFile = new File("../Pictures/zaxxonOtherWall.Png");
+            File pathToFile = new File("Pictures/zaxxonOtherWall.Png");
             wall2 = ImageIO.read(pathToFile);
         } catch (IOException ex) {
             System.out.println(ex);
@@ -22,7 +22,7 @@ public class Wall
 
         Image wall = null;
         try {
-            File pathToFile = new File("../Pictures/zaxxonOtherWall.png");
+            File pathToFile = new File("Pictures/zaxxonOtherWall.png");
             wall = ImageIO.read(pathToFile);
         } catch (IOException ex) {
             System.out.println(ex);
