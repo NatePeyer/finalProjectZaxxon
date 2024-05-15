@@ -23,9 +23,11 @@ public class Turret
     {
         boolean xInHit = ((beam.getX() >= x +10) && (beam.getX() <= x + 90));
         boolean yInHit = ((beam.getY() >= y + 10) && (beam.getY() <= y +90));
-        if(xInHit && yInHit || hadBeenHit)
+        if((xInHit && yInHit) || hadBeenHit)
         {
+            System.out.println("eneter the if statment at line 28");
             hadBeenHit = true;
+            System.out.println("has been hit = true");
             beam.laserHit(ship);
             System.out.println("Turret hit and destroyed" + "\nRespawning in 5 seconds");
 

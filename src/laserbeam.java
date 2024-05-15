@@ -14,43 +14,51 @@ public class laserbeam
     private boolean pressed;
     private boolean wasHit = false;
     private Image laserBeam;
-    public laserbeam()
+    public laserbeam(int xIn, int yIn)
     {
+        x = xIn;
+        y = yIn;
+        tempX = xIn;
+        tempY = yIn;
         System.out.println("laser made");
+        laserBeam = null;
+        try 
+        {
+            File pathToFile = new File("../Pictures/zaxxonLaserbeam-removebg-preview.png");
+            laserBeam = ImageIO.read(pathToFile);
+            //pathToFile.delete();
+        } 
+        catch (IOException ex) 
+        {
+            System.out.println(ex);
+        }
+
     }
 
-    public void movelaserBeam(Graphics g, int xIn, int yIn, int key)
+    public void movelaserBeam(Graphics g, int key, Spaceship ship)
     {
         if(!pressed)
         {
-            tempX = xIn;
-            tempY = yIn;
-            x = xIn + x2;
-            y = yIn + y2;
+            x += x2;
+            y += y2;
         }
         if(key == 47)
         {
             wasHit = false;
             System.out.println("blasting lasers");
             pressed = true;
-            laserBeam = null;
-            try {
-                File pathToFile = new File("../Pictures/zaxxonLaserbeam-removebg-preview.png");
-                laserBeam = ImageIO.read(pathToFile);
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
             g.drawImage(laserBeam, x, y, null);
             g.setColor(Color.RED);
             g.drawRect(x + 3,y,25,25);
             x2 += 5;
             y2 -= 2;
 
-            if (x > 600 || y < 0) {
+            if (x > 600 || y < 0) 
+            {
                 System.out.println("rearming laser");
-                x = xIn;
+                x = ship.getX();
                 x2 = 105;
-                y = yIn;
+                y = ship.getY();
                 y2 = 45;
                 pressed = false;
             }
@@ -62,13 +70,6 @@ public class laserbeam
                     x = tempX + x2;
                     y = tempY + y2;
                     System.out.println("still blasting lasers");
-                    Image laserBeam = null;
-                    try {
-                        File pathToFile = new File("../Pictures/zaxxonLaserbeam-removebg-preview.png");
-                        laserBeam = ImageIO.read(pathToFile);
-                    } catch (IOException ex) {
-                        System.out.println(ex);
-                    }
                     g.drawImage(laserBeam, x, y, null);
                     g.setColor(Color.RED);
                     g.drawRect(x + 3,y,25,25);
@@ -77,9 +78,9 @@ public class laserbeam
 
                     if (x > 600 || y < 0) {
                         System.out.println("rearming laser");
-                        x = xIn;
+                        x = ship.getX();
                         x2 = 105;
-                        y = yIn;
+                        y = ship.getY();
                         y2 = 45;
                         pressed = false;
                     }
@@ -101,6 +102,20 @@ public class laserbeam
         }
     }
 
+    public void laserHit(Spaceship ship)
+    {
+        System.out.println("laser hit method running");
+        x = ship.getX();
+        y = ship.getY();
+        tempX = ship.getX();
+        tempY = ship.getY();
+        x2 = 105;
+        y2 = 45;
+        pressed = false;
+        wasHit = true;
+    }
+
+    //get methods
     public int getX()
     {
         return x;
@@ -109,12 +124,5 @@ public class laserbeam
     public int getY()
     {
         return y;
-    }
-    public void laserHit(Spaceship ship)
-    {
-        x = ship.getX();
-        y = ship.getY();
-        laserBeam = null;
-        wasHit = true;
     }
 }

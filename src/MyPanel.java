@@ -11,7 +11,7 @@ public class MyPanel extends JPanel {
     protected int key;
     protected int count = 0;
     Spaceship ship = new Spaceship();
-    laserbeam laser = new laserbeam();
+    laserbeam laser = new laserbeam(ship.getX(), ship.getY());
     Wall wall = new Wall();
     Turret shotem = new Turret(400,300);
     Turret getem = new Turret(300,450);
@@ -39,7 +39,7 @@ public class MyPanel extends JPanel {
         tri2.drawTriBottom(g);
         ship.drawSpaceship(g,key);
         //wall.paintWall(g);
-        laser.movelaserBeam(g, ship.getX(), ship.getY(), key);
+        laser.movelaserBeam(g, key, ship);
         //shotem.moveTurret(g, laser);
         shotem.turretHit(laser,g,ship);
         getem.turretHit(laser,g,ship);
